@@ -20,10 +20,10 @@ The two modules share some code and are part of the same distribution,
 therefore they can be installed together at the same time with the
 standard sequence for Perl modules:
 
- perl Makefile.PL
- make
- make test
- make install
+    perl Makefile.PL
+    make
+    make test
+    make install
 
 # Dependencies
 
@@ -48,51 +48,51 @@ while the following is optional:
 
 ## Data product extraction
 
- my $sas = XMMSAS::Extract->new;
+    my $sas = XMMSAS::Extract->new;
 
- $sas->evtfile("eventfile.fits");  # input evt
+    $sas->evtfile("eventfile.fits");  # input evt
 
- my $boolean = $sas->camera_is_pn;    # boolean
+    my $boolean = $sas->camera_is_pn;    # boolean
 
- $sas->ccf("path/to/ccf.cif");
+    $sas->ccf("path/to/ccf.cif");
 
- $sas->odf("path/to/...SUM.SAS");
+    $sas->odf("path/to/...SUM.SAS");
 
- $sas->attitude("path/to/...AttHk.fits");
+    $sas->attitude("path/to/...AttHk.fits");
 
- # $sas->verbose([01]); # set chatter level; default: 1
+    # $sas->verbose([01]); # set chatter level; default: 1
 
- $sas->addexpr('expr1','expr2',...); # adds filtering expressions
+    $sas->addexpr('expr1','expr2',...); # adds filtering expressions
 
- $sas->add_predefined_expr($filter);
-   # (or $sas->add_predefired_expr("not $filter");)
-   # adds an expression from a library, appropriate for the camera.
-   # For $filter, see B<EXPRESSION LIBRARY>
-   # The filter can be negated by putting "not" in front of it.
+    $sas->add_predefined_expr($filter);
+      # (or $sas->add_predefired_expr("not $filter");)
+      # adds an expression from a library, appropriate for the camera.
+      # For $filter, see B<EXPRESSION LIBRARY>
+      # The filter can be negated by putting "not" in front of it.
 
- $sas->resetexpr;  \# resets filtering to standard pattern only
+    $sas->resetexpr;  \# resets filtering to standard pattern only
 
- $sas->excludesrc(@xylist);
+    $sas->excludesrc(@xylist);
 
- $sas->evtextract("outfile.fits",{ SELFREPLACE => 0 });
-   \# SELFREPLACE=>1 replaces the main event file with the newly filtered one
+    $sas->evtextract("outfile.fits",{ SELFREPLACE => 0 });
+      \# SELFREPLACE=>1 replaces the main event file with the newly filtered one
 
- $sas->addbadpixels;
+    $sas->addbadpixels;
 
- $sas->mosaic\_attcalc;  \# needed for mosaic-mode data
+    $sas->mosaic\_attcalc;  \# needed for mosaic-mode data
 
- $sas->reproject($RA,$DEC);
+    $sas->reproject($RA,$DEC);
 
- $sas->imgextract("outfile.fits",\[ {DETCOORDS=>1,
-                                    BINSIZE=>32,
-                                    XYIMGMINMAX=>\[$xmin,$xmax,$ymin,$ymax\]
-                                   } \]);
+    $sas->imgextract("outfile.fits",\[ {DETCOORDS=>1,
+                                       BINSIZE=>32,
+                                       XYIMGMINMAX=>\[$xmin,$xmax,$ymin,$ymax\]
+                                      } \]);
 
- $sas->attitude($attfile);
- $sas->eexpmap($img,"outfile.fits",$pimin,$pimax,$opt);
+    $sas->attitude($attfile);
+    $sas->eexpmap($img,"outfile.fits",$pimin,$pimax,$opt);
 
- $expr = $sas->formatexpr; \# return selection expression used by
-           \# evtextract and similars. Useful for debug purposes.
+    $expr = $sas->formatexpr; \# return selection expression used by
+               \# evtextract and similars. Useful for debug purposes.
 
 
 ## Source detection
