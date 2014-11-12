@@ -34,14 +34,14 @@ There are several prerequisite for these module, some are mandatory:
 - the PDL and Moose modules for Perl (can be installed from the
   repositories of any Linux distribution; or with Macports for the Mac);
 
-- the L<Astro::WCS::PP
-  module|https://github.com/piero-ranalli/Astro-WCS-PP>;
+- the Astro::WCS::PP module
+  (https://github.com/piero-ranalli/Astro-WCS-PP);
 
 while the following is optional:
 
-- L<Alexey Vikhlinin's
-  zhtools|http://hea-www.harvard.edu/RD/zhtools/>, whose addimages
-  command is used when reframing images before detection.
+- Alexey Vikhlinin's zhtools (http://hea-www.harvard.edu/RD/zhtools/),
+  whose addimages command is used when reframing images before
+  detection.
   
 
 # SYNOPSIS
