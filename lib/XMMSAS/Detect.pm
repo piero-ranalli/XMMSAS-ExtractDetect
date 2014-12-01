@@ -14,8 +14,11 @@ XMMSAS::Detect  --  interface to XMM-Newton SAS emldetect (and more)
  $sas->img( $images );
  $sas->expmap( $expmaps );
  $sas->novign( $expmaps_novign );
+ $sas->bkg( $bkgs );
 
  $sas->fitbkg;
+
+ # $images,$expmaps, etc above are arrayrefs of filenames
 
 
 =head2 Detection
