@@ -171,12 +171,10 @@ sub dofit {
     my $self = shift;
     my $i = shift;
 
-    my $imgf = ${$self->img}[$i];
-    my $expf = ${$self->expmap}[$i];
+    my $imgf    = ${$self->img}[$i];
+    my $expf    = ${$self->expmap}[$i];
     my $novignf = ${$self->novign}[$i];
-
-    my $bkgf = $imgf;
-    $bkgf =~ s/_img/_bkg/;
+    my $bkgf    = ${$self->bkg}[$i];
 
     # my $dpn = $self->call("imexam $exp median reg=$novign");
     my $img = rfits($imgf);
