@@ -234,7 +234,7 @@ sub srcmask {
     my $self = shift;
     my $img = shift;
 
-    my ($x,$y) = wcstransfinv($img->hdr,
+    my ($x,$y) = wcs_img_radec2pix($img->hdr,
 			      $self->srccat->{$self->srclist_racol},
 			      $self->srccat->{$self->srclist_deccol}
 			     );
